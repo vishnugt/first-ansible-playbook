@@ -1,0 +1,7 @@
+packages_to_install:
+  - vim
+  - htop
+  - tmux
+
+packages_to_remove: 
+  - nginx

@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+  strategy: free #for parallelism
+
+  tasks:
+  - name: Update packages
+    apt:
+      update_cache: yes
+      upgrade: yes
+
+  - name: Install essential packages
+    package:
+      name: "{{ packages_to_install }}"
+      state: latest
+  
+  - name: Remove some packages
+    package:
+      name: "{{ packages_to_remove }}"
+      state: "absent"
+
+  - name: Set authorized key taken from file
+    ansible.posix.authorized_key:
+      user: root
+      state: present
+      key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
