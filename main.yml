@@ -4,10 +4,11 @@
   become: true
   strategy: free # for parallelism for multiple servers
 
+
   pre_tasks:
-  
     - name: Config
       ansible.builtin.include_vars: vars.yml
+
 
   tasks:
 
@@ -28,8 +29,4 @@
 
   - name: Install nginx proxy manager
     ansible.builtin.import_tasks: tasks/containers/nginx_proxy_manager.yml
-
-
-    
-
 
