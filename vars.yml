@@ -5,3 +5,8 @@ packages_to_install:
 
 packages_to_remove: 
   - nginx
+  - nginx-common
+
+
+#nginx_proxy_variables
+network: proxy

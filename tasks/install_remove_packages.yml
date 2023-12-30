@@ -1,0 +1,16 @@
+---
+
+- name: Update packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install essential packages
+  package:
+    name: "{{ packages_to_install }}"
+    state: latest
+
+- name: Remove some packages
+  package:
+    name: "{{ packages_to_remove }}"
+    state: "absent"
