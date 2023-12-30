@@ -15,18 +15,21 @@
   - name: Add SSH key
     ansible.builtin.import_tasks: tasks/add_ssh_key.yml
     
-  - name: APT update upgrade
-    ansible.builtin.import_tasks: tasks/apt_update_upgrade.yml
+  # - name: APT update upgrade
+  #   ansible.builtin.import_tasks: tasks/apt_update_upgrade.yml
     
-  - name: Install and remove packages
-    ansible.builtin.import_tasks: tasks/install_remove_packages.yml
+  # - name: Install and remove packages
+  #   ansible.builtin.import_tasks: tasks/install_remove_packages.yml
     
-  - name: Install docker
-    ansible.builtin.import_tasks: tasks/install_docker.yml
+  # - name: Install docker
+  #   ansible.builtin.import_tasks: tasks/install_docker.yml
     
-  - name: Install portainer
-    ansible.builtin.import_tasks: tasks/containers/portainer.yml
+  # - name: Install portainer
+  #   ansible.builtin.import_tasks: tasks/containers/portainer.yml
 
   - name: Install nginx proxy manager
     ansible.builtin.import_tasks: tasks/containers/nginx_proxy_manager.yml
+    
+  - name: Install nginx proxy manager
+    ansible.builtin.import_tasks: tasks/containers/personal_blog.yml
 

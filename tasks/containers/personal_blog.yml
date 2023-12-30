@@ -1,0 +1,11 @@
+---
+- name: Create personal blog
+  community.docker.docker_container:
+    name: personal_blog
+    image: 'nginx:latest'
+    volumes:
+      - /home/vishnugt/ggwp.monster:/usr/share/nginx/html
+    restart_policy: unless-stopped
+    networks:
+      - name: "{{ network }}"
+    network_mode: "bridge"

@@ -17,4 +17,4 @@
     restart_policy: unless-stopped
     networks:
       - name: "{{ network }}"
-    network_mode: "{{ network }}"
+    network_mode: "bridge"
